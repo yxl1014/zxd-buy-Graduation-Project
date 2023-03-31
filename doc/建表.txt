@@ -1,0 +1,28 @@
+用户表： user
+列名：（用户账号、用户密码、总消费、创建日期）
+类型：（string、string、int）
+
+商户表：business
+列名：（商户号、密码、店铺名称、商品种类的数量、总收入、创建日期、申请id）
+类型：（int、string、string、int、float、int、int）
+
+管理员：manage
+列名：（账号、密码）
+类型：（string、string）
+
+商户申请：apply
+列名：（申请id、申请人、身份证号、手机号、店铺名称、注册金额、状态）
+类型：（int、string、string、int、string、float、int）
+
+订单表：order
+列名：（订单号、商品id、购买数量、用户账号、金额、日期）
+类型：（int、int、int、string、float、int）
+
+商品表：product
+列名：（商品id、商品名称、价格、库存、商户号、商品图片、商品简介）
+类型：（int、string、float、int、int、图片类型我不懂（blob）、string）
+
+
+购物车表：buy_car
+列名：（商品id、添加数量、用户账号、创建日期）
+类型：（int、int、string、int(timestamp) ）
