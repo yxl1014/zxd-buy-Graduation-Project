@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.example.buy.mapper.ManageMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -72,5 +73,37 @@ public class MyResponse {
         this.status = status;
         this.consumer_account = consumer_account;
         this.consumer_date = consumer_date;
+    }
+
+    private List<Integer> order_id;
+    private List<List<String>> product_name;
+    private List<String> user;
+    private List<Float> pay_amount;
+    private List<String> date;
+
+    public MyResponse(int status, List<Integer> order_id, List<List<String>> product_name,
+                      List<String> user, List<Float> pay_amount, List<String> date) {
+        this.status = status;
+        this.order_id = order_id;
+        this.product_name = product_name;
+        this.user = user;
+        this.pay_amount = pay_amount;
+        this.date = date;
+    }
+
+    private List<Integer> product_id = new ArrayList<>();
+    private List<String> product_name_ = new ArrayList<>();
+    private List<Float> product_price = new ArrayList<>();
+    private List<Integer> product_amount_ = new ArrayList<>();
+    private List<String> product_msg = new ArrayList<>();
+
+    public MyResponse(List<Integer> product_id, List<String> product_name_, List<Float> product_price,
+                      List<Integer> product_amount_, List<String> product_msg) {
+        this.status = status;
+        this.product_id = product_id;
+        this.product_name_ = product_name_;
+        this.product_price = product_price;
+        this.product_amount_ = product_amount_;
+        this.product_msg = product_msg;
     }
 }

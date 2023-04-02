@@ -13,8 +13,8 @@ import java.util.List;
 @Mapper
 public interface ApplyMapper {
 
-    @Insert("insert into apply(apply_name,apply_card_id,apply_tel,apply_bname,register_amount,status) " +
-            "values(#{apply_name},#{apply_card_id},#{apply_tel},#{apply_bname},#{register_amount},#{status})")
+    @Insert("insert into apply(apply_name,apply_card_id,apply_tel,apply_bname,register_amount) " +
+            "values(#{apply_name},#{apply_card_id},#{apply_tel},#{apply_bname},#{register_amount})")
     int insertApply(Apply apply);
 
     @Select("select * from apply where status = #{status}")

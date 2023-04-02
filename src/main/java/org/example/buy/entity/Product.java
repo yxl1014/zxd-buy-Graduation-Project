@@ -20,4 +20,13 @@ public class Product {
     private int bid;
     private byte[] img;
     private String msg;
+
+    public Product(String pname, float amount, int counts, int bid, byte[] img, String msg) {
+        this.pname = pname;
+        this.amount = amount;
+        this.counts = counts;
+        this.bid = bid;
+        this.img = img;
+        this.msg = msg;
+    }
 }

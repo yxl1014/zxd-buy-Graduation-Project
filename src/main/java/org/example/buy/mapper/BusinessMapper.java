@@ -29,4 +29,13 @@ public interface BusinessMapper {
     @Select("select * from business where apply_id = #{aid}")
     Business selectBusinessByAid(@Param("aid") int aid);
 
+    @Select("select * from business where b_name = #{b_name}")
+    Business selectBusinessByBName(@Param("b_name") String b_name);
+
+    @Select("select * from business where bid = #{bid} and b_password = #{b_password}")
+    Business selectBusinessByBidAndPassword(@Param("bid") int bid, @Param("b_password") String b_password);
+
+    @Update("update business set b_password = #{b} where bid = #{bid}")
+    int updatePasswordByBid(@Param("bid") int bid, @Param("b_password") String b_password);
+
 }
