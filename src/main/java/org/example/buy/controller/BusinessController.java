@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.util.Arrays;
+
 /**
  * @author yxl
  * @date 2023/4/2 上午11:32
@@ -65,6 +68,14 @@ public class BusinessController {
                                  @RequestParam("product_msg") String product_msg) {
         return businessService.addProduct(business_account, product_name, product_price,
                 product_amount, product_picture, product_msg);
+    }
+
+    @PostMapping("/upload")
+    public String addProduct(@RequestParam("product_picture") MultipartFile product_picture) throws IOException {
+        System.out.println(product_picture.getOriginalFilename());
+        System.out.println(product_picture.getName());
+        System.out.println(Arrays.toString(product_picture.getBytes()));
+        return "oh 传上来咯";
     }
 
     @PostMapping("/deleteProduct")

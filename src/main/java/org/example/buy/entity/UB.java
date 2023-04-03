@@ -20,4 +20,11 @@ public class UB {
     private int pid;
     private int counts;
     private Timestamp create_time;
+
+    public UB(int car_id, int pid, int counts, Timestamp create_time) {
+        this.car_id = car_id;
+        this.pid = pid;
+        this.counts = counts;
+        this.create_time = create_time;
+    }
 }

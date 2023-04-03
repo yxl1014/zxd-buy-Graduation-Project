@@ -36,4 +36,7 @@ public interface ProductMapper {
 
     @Select("select count(1) from product")
     int selectCount();
+
+    @Select("select * from product where pname = #{pname}")
+    List<Product> selectProductByPName(@Param("pname") String pname);
 }

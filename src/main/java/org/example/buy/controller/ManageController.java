@@ -4,9 +4,6 @@ import org.example.buy.entity.MyResponse;
 import org.example.buy.service.ManageServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author yxl
  * @date 2023/3/27 下午5:42

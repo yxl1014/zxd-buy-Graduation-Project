@@ -22,4 +22,13 @@ public class Order_ {
     private String user_account;
     private float all_amount;
     private Timestamp order_time;
+
+    public Order_(int bid, String pid, String pCount, String user_account, float all_amount, Timestamp order_time) {
+        this.bid = bid;
+        this.pid = pid;
+        this.pCount = pCount;
+        this.user_account = user_account;
+        this.all_amount = all_amount;
+        this.order_time = order_time;
+    }
 }

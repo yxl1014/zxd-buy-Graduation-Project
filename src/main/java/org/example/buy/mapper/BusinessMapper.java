@@ -38,4 +38,7 @@ public interface BusinessMapper {
     @Update("update business set b_password = #{b_password} where bid = #{bid}")
     int updatePasswordByBid(@Param("bid") int bid, @Param("b_password") String b_password);
 
+    @Update("update business set all_amount = #{all_amount} where bid = #{bid}")
+    int updateAmountByBid(@Param("all_amount") float amount, @Param("bid") int bid);
+
 }

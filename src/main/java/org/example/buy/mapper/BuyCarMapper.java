@@ -19,4 +19,7 @@ public interface BuyCarMapper {
 
     @Select("select * from buy_car where user_account = #{account}")
     Buy_Car selectBuyCarByAccount(@Param("account") String account);
+
+    @Update("update buy_car set counts = counts + 1 where car_id = #{id}")
+    int updateCountsById(@Param("id") int car_id);
 }

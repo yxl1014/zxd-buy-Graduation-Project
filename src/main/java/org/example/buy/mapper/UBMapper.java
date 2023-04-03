@@ -1,10 +1,9 @@
 package org.example.buy.mapper;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.*;
 import org.example.buy.entity.UB;
+
+import java.util.List;
 
 /**
  * @author yxl
@@ -19,4 +18,10 @@ public interface UBMapper {
 
     @Delete("delete from u_b where car_id = #{car_id}")
     int deleteUbByCarId(@Param("car_id") int car_id);
+
+    @Delete("delete from u_b where car_id = #{car_id} and pid = #{pid}")
+    int deleteUbByCarIdAndPid(@Param("car_id") int car_id, @Param("pid") int pid);
+
+    @Select("select * from u_b where car_id = #{car_id}")
+    List<UB> selectUbByCarId(@Param("car_id") int car_id);
 }

@@ -27,4 +27,10 @@ public interface UserMapper {
 
     @Delete("delete from user where account = #{account}")
     int deleteUserByAccount(@Param("account") String account);
+
+    @Update("update user set all_amount = #{all} where account = #{account}")
+    int updateUserAmountByAccount(@Param("all") Float amount, @Param("account") String account);
+
+    @Update("update user set password = #{password} where account = #{account}")
+    int updatePasswordByAccount(@Param("password") String password, @Param("account") String account);
 }

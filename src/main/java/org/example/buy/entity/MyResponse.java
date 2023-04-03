@@ -91,15 +91,14 @@ public class MyResponse {
         this.date = date;
     }
 
-    private List<Integer> product_id = new ArrayList<>();
-    private List<String> product_name_ = new ArrayList<>();
-    private List<Float> product_price = new ArrayList<>();
-    private List<Integer> product_amount_ = new ArrayList<>();
-    private List<String> product_msg = new ArrayList<>();
+    private List<Integer> product_id;
+    private List<String> product_name_;
+    private List<Float> product_price;
+    private List<Integer> product_amount_;
+    private List<String> product_msg;
 
     public MyResponse(List<Integer> product_id, List<String> product_name_, List<Float> product_price,
                       List<Integer> product_amount_, List<String> product_msg) {
-        this.status = status;
         this.product_id = product_id;
         this.product_name_ = product_name_;
         this.product_price = product_price;
@@ -107,15 +106,71 @@ public class MyResponse {
         this.product_msg = product_msg;
     }
 
-    private List<Integer> random_id = new ArrayList<>();
-    private List<String> random_name = new ArrayList<>();
-    private List<Float> random_price = new ArrayList<>();
-    private List<Integer> random_num = new ArrayList<>();
+    private List<Integer> random_id;
+    private List<String> random_name;
+    private List<Float> random_price;
+    private List<Integer> random_num;
 
     public MyResponse(List<Integer> random_id, List<String> random_name, List<Float> random_price, List<Integer> random_num) {
         this.random_id = random_id;
         this.random_name = random_name;
         this.random_price = random_price;
         this.random_num = random_num;
+    }
+
+    private List<String> product_shopname;
+
+    public MyResponse(int status, List<String> product_name_, List<Integer> product_id, List<String> product_shopname) {
+        this.status = status;
+        this.product_id = product_id;
+        this.product_name_ = product_name_;
+        this.product_shopname = product_shopname;
+    }
+
+    private Product product;
+
+    public MyResponse(int status, Product product) {
+        this.status = status;
+        this.product = product;
+    }
+
+    private String shopname;
+    private Integer product_quantity;
+
+    public MyResponse(int status, String shopname, Integer product_quantity,
+                      List<String> product_name_, List<Integer> product_id,
+                      List<Float> product_price) {
+        this.status = status;
+        this.product_id = product_id;
+        this.product_name_ = product_name_;
+        this.product_price = product_price;
+        this.shopname = shopname;
+        this.product_quantity = product_quantity;
+    }
+
+    private List<Integer> product_quantity_;
+
+    public MyResponse(int status, List<String> product_name_, List<Integer> product_id,
+                      List<Float> product_price, List<String> product_msg, List<Integer> product_quantity, String xxx) {
+        this.status = status;
+        this.product_id = product_id;
+        this.product_name_ = product_name_;
+        this.product_price = product_price;
+        this.product_msg = product_msg;
+        this.product_quantity_ = product_quantity;
+    }
+
+    private List<String> shopname_;
+
+    private List<Float> product_amount__;
+    private List<String> create_time;
+
+    public MyResponse(int status, List<List<String>> product_name, List<Float> product_amount_,
+                      List<String> shopname, List<String> create_time, boolean flag1, boolean flag2, boolean flag3) {
+        this.status = status;
+        this.product_name = product_name;
+        this.product_amount__ = product_amount_;
+        this.shopname_ = shopname;
+        this.create_time = create_time;
     }
 }

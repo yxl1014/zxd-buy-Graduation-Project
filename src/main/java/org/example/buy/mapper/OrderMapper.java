@@ -21,4 +21,7 @@ public interface OrderMapper {
 
     @Select("select * from order_ where bid = #{bid}")
     List<Order_> selectAllByBid(@Param("bid") int bid);
+
+    @Select("select * from order_ where user_account = #{user_account}")
+    List<Order_> selectAllByAccount(@Param("user_account") String user_account);
 }
