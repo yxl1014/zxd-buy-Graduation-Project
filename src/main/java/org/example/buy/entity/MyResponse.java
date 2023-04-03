@@ -106,4 +106,16 @@ public class MyResponse {
         this.product_amount_ = product_amount_;
         this.product_msg = product_msg;
     }
+
+    private List<Integer> random_id = new ArrayList<>();
+    private List<String> random_name = new ArrayList<>();
+    private List<Float> random_price = new ArrayList<>();
+    private List<Integer> random_num = new ArrayList<>();
+
+    public MyResponse(List<Integer> random_id, List<String> random_name, List<Float> random_price, List<Integer> random_num) {
+        this.random_id = random_id;
+        this.random_name = random_name;
+        this.random_price = random_price;
+        this.random_num = random_num;
+    }
 }

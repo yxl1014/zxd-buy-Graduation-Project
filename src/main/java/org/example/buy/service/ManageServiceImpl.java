@@ -109,6 +109,7 @@ public class ManageServiceImpl {
             int ok = applyMapper.deleteApplyByAid(apply_id);
             return new MyResponse(ok);
         }
+        applyMapper.updateStatusByAid(apply_id, true);
         String password = randomUtil.getRandomPassword();
         Business business = new Business(password, apply.getApply_bname(), 0,
                 apply.getRegister_amount(), new Timestamp(System.currentTimeMillis()), apply_id);

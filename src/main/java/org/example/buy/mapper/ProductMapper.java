@@ -33,4 +33,7 @@ public interface ProductMapper {
 
     @Delete("delete from product where pid = #{pid}")
     int deleteProductByPid(@Param("pid") int pid);
+
+    @Select("select count(1) from product")
+    int selectCount();
 }

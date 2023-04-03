@@ -6,7 +6,9 @@ import org.example.buy.mapper.BusinessMapper;
 import org.example.buy.mapper.OrderMapper;
 import org.example.buy.mapper.ProductMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +38,7 @@ public class BusinessServiceImpl {
     public MyResponse register(String people, String people_id, String phone_num, String shopname, float register_amount) {
         Business business = businessMapper.selectBusinessByBName(shopname);
 
-        if (business == null) {
+        if (business != null) {
             return new MyResponse(2);
         }
 
@@ -107,13 +109,19 @@ public class BusinessServiceImpl {
     }
 
     public MyResponse addProduct(Integer business_account, String product_name, float product_price,
-                                 Integer product_amount, byte[] product_picture, String product_msg) {
+                                 Integer product_amount, MultipartFile product_picture, String product_msg) {
         Business business = businessMapper.selectBusinessByBid(business_account);
         if (business == null) {
             return new MyResponse(2);
         }
+        byte[] img = null;
+        try {
+            img = product_picture.getBytes();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         int ok = productMapper.insertProduct(new Product(product_name, product_price, product_amount, business_account,
-                product_picture, product_msg));
+                img, product_msg));
         return new MyResponse(ok);
     }
 

@@ -35,7 +35,7 @@ public interface BusinessMapper {
     @Select("select * from business where bid = #{bid} and b_password = #{b_password}")
     Business selectBusinessByBidAndPassword(@Param("bid") int bid, @Param("b_password") String b_password);
 
-    @Update("update business set b_password = #{b} where bid = #{bid}")
+    @Update("update business set b_password = #{b_password} where bid = #{bid}")
     int updatePasswordByBid(@Param("bid") int bid, @Param("b_password") String b_password);
 
 }

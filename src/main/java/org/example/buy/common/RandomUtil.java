@@ -2,6 +2,7 @@ package org.example.buy.common;
 
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.Random;
 
 /**
@@ -48,5 +49,27 @@ public class RandomUtil {
             sb.append(cs[random.nextInt(cs.length)]);
         }
         return sb.toString();
+    }
+
+    public HashSet<Integer> randomPid(int size) {
+        HashSet<Integer> set = new HashSet<>();
+        if (size <= 10) {
+            while (set.size() != size) {
+                int i = random.nextInt(size);
+                if (i == 0) {
+                    continue;
+                }
+                set.add(i);
+            }
+        } else {
+            while (set.size() != 10) {
+                int i = random.nextInt(size);
+                if (i == 0) {
+                    continue;
+                }
+                set.add(i);
+            }
+        }
+        return set;
     }
 }

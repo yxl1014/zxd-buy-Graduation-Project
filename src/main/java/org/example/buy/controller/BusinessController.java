@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @author yxl
@@ -60,7 +61,7 @@ public class BusinessController {
                                  @RequestParam("product_name") String product_name,
                                  @RequestParam("product_price") float product_price,
                                  @RequestParam("product_amount") Integer product_amount,
-                                 @RequestParam("product_picture") byte[] product_picture,
+                                 @RequestParam("product_picture") MultipartFile product_picture,
                                  @RequestParam("product_msg") String product_msg) {
         return businessService.addProduct(business_account, product_name, product_price,
                 product_amount, product_picture, product_msg);

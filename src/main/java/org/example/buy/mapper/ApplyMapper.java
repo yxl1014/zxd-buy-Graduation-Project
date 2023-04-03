@@ -25,4 +25,7 @@ public interface ApplyMapper {
 
     @Select("select * from apply where aid = #{aid}")
     Apply selectApplyByAid(@Param("aid") int aid);
+
+    @Update("update apply set status = #{status} where aid = #{aid}")
+    int updateStatusByAid(@Param("aid") int aid, @Param("status") boolean status);
 }

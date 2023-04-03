@@ -19,4 +19,10 @@ public class User {
     private String password;
     private float all_amount;
     private Timestamp create_time;
+
+    public User(String account, String password, Timestamp create_time) {
+        this.account = account;
+        this.password = password;
+        this.create_time = create_time;
+    }
 }

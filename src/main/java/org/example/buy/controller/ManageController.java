@@ -33,7 +33,7 @@ public class ManageController {
     }
 
     @PostMapping("/deleteBusiness")
-    public MyResponse deleteBusiness(@RequestParam("manage_account") Integer account) {
+    public MyResponse deleteBusiness(@RequestParam("business_account") Integer account) {
         return manageService.deleteBusiness(account);
     }
 

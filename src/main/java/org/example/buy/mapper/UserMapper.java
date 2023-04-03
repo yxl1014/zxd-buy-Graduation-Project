@@ -13,7 +13,7 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    @Insert("insert into user(account,password,all_amount,create_time) values(#{account},#{password},#{all_amount},#{create_time})")
+    @Insert("insert into user(account,password,create_time) values(#{account},#{password},#{create_time})")
     int insertUser(User user);
 
     @Select("select * from user")
@@ -21,6 +21,9 @@ public interface UserMapper {
 
     @Select("select * from user where account = #{account}")
     User selectUserByAccount(@Param("account") String account);
+
+    @Select("select * from user where account = #{account} and password = #{password}")
+    User selectUserByAccountAndPassword(@Param("account") String account, @Param("account") String password);
 
     @Delete("delete from user where account = #{account}")
     int deleteUserByAccount(@Param("account") String account);
