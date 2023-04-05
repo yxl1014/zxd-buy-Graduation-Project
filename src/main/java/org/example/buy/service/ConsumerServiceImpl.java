@@ -47,6 +47,7 @@ public class ConsumerServiceImpl {
         if (user != null) {
             return new MyResponse(0);
         }
+        buyCarMapper.insertBuyCar(consumer_account);
         int ok = userMapper.insertUser(new User(consumer_account, consumer_password, new Timestamp(System.currentTimeMillis())));
         return new MyResponse(ok);
     }
@@ -170,6 +171,9 @@ public class ConsumerServiceImpl {
 
     public MyResponse addBuyCar(String consumer_account, Integer product_id, Integer product_quantity) {
         Buy_Car buy_car = buyCarMapper.selectBuyCarByAccount(consumer_account);
+        if (buy_car == null) {
+            return new MyResponse(0);
+        }
         int ok = ubMapper.insertUB(new UB(buy_car.getCar_id(), product_id,
                 product_quantity, new Timestamp(System.currentTimeMillis())));
         int ok1 = buyCarMapper.updateCountsById(buy_car.getCar_id());

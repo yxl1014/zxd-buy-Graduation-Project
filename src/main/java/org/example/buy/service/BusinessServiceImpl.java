@@ -120,6 +120,7 @@ public class BusinessServiceImpl {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        businessMapper.updateCountByBid(business.getProduct_count() + 1, business.getBid());
         int ok = productMapper.insertProduct(new Product(product_name, product_price, product_amount, business_account,
                 img, product_msg));
         return new MyResponse(ok);

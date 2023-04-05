@@ -41,4 +41,7 @@ public interface BusinessMapper {
     @Update("update business set all_amount = #{all_amount} where bid = #{bid}")
     int updateAmountByBid(@Param("all_amount") float amount, @Param("bid") int bid);
 
+    @Update("update business set product_count = #{product_count} where bid = #{bid}")
+    int updateCountByBid(@Param("product_count") int product_count, @Param("bid") int bid);
+
 }

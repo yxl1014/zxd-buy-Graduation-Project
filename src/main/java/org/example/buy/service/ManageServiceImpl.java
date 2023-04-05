@@ -143,7 +143,10 @@ public class ManageServiceImpl {
             return new MyResponse(0);
         }
         Buy_Car buy_car = buyCarMapper.selectBuyCarByAccount(account);
-        int ok1 = buyCarMapper.deleteCarByCarId(buy_car.getCar_id());
+        int ok1 = 0;
+        if (buy_car != null) {
+            ok1 = buyCarMapper.deleteCarByCarId(buy_car.getCar_id());
+        }
         if (ok1 != 1) {
             return new MyResponse(0);
         }

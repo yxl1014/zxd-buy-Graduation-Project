@@ -23,7 +23,7 @@ public interface UserMapper {
     User selectUserByAccount(@Param("account") String account);
 
     @Select("select * from user where account = #{account} and password = #{password}")
-    User selectUserByAccountAndPassword(@Param("account") String account, @Param("account") String password);
+    User selectUserByAccountAndPassword(@Param("account") String account, @Param("password") String password);
 
     @Delete("delete from user where account = #{account}")
     int deleteUserByAccount(@Param("account") String account);

@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/consumer")
 public class ConsumerController {
 
-    @Autowired
-    private ConsumerServiceImpl consumerService;
+    private final ConsumerServiceImpl consumerService;
+
+    public ConsumerController(ConsumerServiceImpl consumerService) {
+        this.consumerService = consumerService;
+    }
 
     @PostMapping("/register")
     public MyResponse register(@RequestParam("consumer_account") String consumer_account,
